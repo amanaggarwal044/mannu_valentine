@@ -3,220 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <title>Nandini Hospital Prescription</title>
+
 <style>
     body {
+        background: #eaeaea;
         font-family: Arial, Helvetica, sans-serif;
-        background: #f5f5f5;
     }
-    .prescription {
+
+    .sheet {
         width: 900px;
         margin: 20px auto;
         background: #fff;
-        padding: 20px;
-        border: 1px solid #ccc;
+        border: 1px solid #999;
+        padding: 18px 22px;
     }
+
+    /* HEADER */
     .header {
         display: flex;
         justify-content: space-between;
         border-bottom: 2px solid #2f7d5a;
-        padding-bottom: 10px;
+        padding-bottom: 8px;
     }
+
     .hospital-name {
-        font-size: 28px;
+        font-size: 26px;
         font-weight: bold;
         color: #2f7d5a;
+        letter-spacing: 1px;
     }
-    .hospital-details {
+
+    .hospital-address {
+        font-size: 14px;
+        margin-top: 2px;
+    }
+
+    .contact {
         text-align: right;
         font-size: 14px;
+        line-height: 1.4;
     }
-    .section {
+
+    /* DETAILS */
+    .details {
         margin-top: 15px;
-    }
-    .row {
         display: flex;
-        gap: 10px;
+        gap: 30px;
+        font-size: 14px;
+    }
+
+    .col {
+        flex: 1;
+    }
+
+    .line {
+        display: flex;
         margin-bottom: 8px;
     }
-    .row label {
+
+    .label {
         width: 120px;
         font-weight: bold;
     }
-    input, textarea {
-        width: 100%;
-        padding: 5px;
-        border: 1px solid #aaa;
+
+    .value {
+        border-bottom: 1px solid #000;
+        flex: 1;
+        padding-left: 6px;
+    }
+
+    /* VITALS */
+    .vitals {
+        margin-top: 10px;
         font-size: 14px;
     }
-    textarea {
-        resize: vertical;
+
+    /* DIAGNOSIS */
+    .section-title {
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 15px;
     }
-    .two-col {
-        display: flex;
-        gap: 20px;
+
+    .diagnosis-box {
+        border: 1px solid #000;
+        padding: 6px 8px;
+        font-size: 14px;
+        min-height: 65px;
+        white-space: pre-line;
     }
-    .two-col > div {
-        flex: 1;
-    }
+
+    /* RX */
     .rx {
-        margin-top: 20px;
+        margin-top: 10px;
+        font-size: 14px;
     }
-    .rx h3 {
-        margin-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-    }
-    .medicine {
+
+    .rx-row {
         display: flex;
-        gap: 10px;
         margin-bottom: 8px;
     }
-    .medicine input {
-        flex: 1;
+
+    .rx-med {
+        width: 70%;
+        border-bottom: 1px solid #000;
+        padding-left: 6px;
     }
+
+    .rx-dose {
+        width: 30%;
+        border-bottom: 1px solid #000;
+        padding-left: 6px;
+        text-align: left;
+    }
+
+    .duration {
+        margin-top: 8px;
+        display: flex;
+        font-size: 14px;
+    }
+
+    /* FOOTER */
     .footer {
-        margin-top: 20px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
         font-size: 12px;
-        text-align: right;
-        color: #555;
     }
+
     @media print {
-        body {
-            background: none;
-        }
-        input, textarea {
-            border: none;
-        }
+        body { background: none; }
+        .sheet { border: none; }
     }
 </style>
 </head>
 <body>
 
-<div class="prescription">
+<div class="sheet">
 
-    <!-- Header -->
+    <!-- HEADER -->
     <div class="header">
         <div>
             <div class="hospital-name">NANDINI HOSPITAL</div>
-            <div>Chotu Ram Colony, Near Jairam Hospital Chowk,<br>
-                Narwana (Jind)</div>
+            <div class="hospital-address">
+                Chotu Ram Colony, Near Jairam Hospital Chowk,<br>
+                Narwana (Jind)
+            </div>
         </div>
-        <div class="hospital-details">
+        <div class="contact">
             📞 90500-19007<br>
             ✉️ nandinihospitalnarwana@gmail.com
         </div>
     </div>
 
-    <!-- Patient Details -->
-    <div class="section">
-        <div class="two-col">
-            <div>
-                <div class="row">
-                    <label>UHID No:</label>
-                    <input type="text" value="U-887/2026">
-                </div>
-                <div class="row">
-                    <label>Name:</label>
-                    <input type="text" value="Mrs. Depika">
-                </div>
-                <div class="row">
-                    <label>S/D/W/O:</label>
-                    <input type="text" value="Mr. Vinod Kumar">
-                </div>
-                <div class="row">
-                    <label>Age / Sex:</label>
-                    <input type="text" value="39Y / Female">
-                </div>
-                <div class="row">
-                    <label>Mobile:</label>
-                    <input type="text" value="9671565369">
-                </div>
-                <div class="row">
-                    <label>Address:</label>
-                    <input type="text" value="Narwana">
-                </div>
-            </div>
+    <!-- PATIENT DETAILS -->
+    <div class="details">
+        <div class="col">
+            <div class="line"><div class="label">UHID No:</div><div class="value">U-887/2026</div></div>
+            <div class="line"><div class="label">Name:</div><div class="value">Mrs. Depika</div></div>
+            <div class="line"><div class="label">S/D/W/O:</div><div class="value">Mr. Vinod Kumar</div></div>
+            <div class="line"><div class="label">Age / Sex:</div><div class="value">39Y / Female</div></div>
+            <div class="line"><div class="label">Mobile:</div><div class="value">9671565369</div></div>
+            <div class="line"><div class="label">Address:</div><div class="value">Narwana</div></div>
+        </div>
 
-            <div>
-                <div class="row">
-                    <label>Date:</label>
-                    <input type="text" value="19-Jan-2026 05:41 PM">
-                </div>
-                <div class="row">
-                    <label>Valid Upto:</label>
-                    <input type="text" value="23-Jan-2026">
-                </div>
-                <div class="row">
-                    <label>OPD No:</label>
-                    <input type="text" value="OP-1334">
-                </div>
-                <div class="row">
-                    <label>Dept:</label>
-                    <input type="text" value="General Medicine">
-                </div>
-                <div class="row">
-                    <label>Doctor:</label>
-                    <input type="text" value="Dr. Virender Kundu">
-                </div>
-            </div>
+        <div class="col">
+            <div class="line"><div class="label">Date:</div><div class="value">19-Jan-2026 05:41 PM</div></div>
+            <div class="line"><div class="label">Valid Upto:</div><div class="value">23-Jan-2026</div></div>
+            <div class="line"><div class="label">OPD No:</div><div class="value">OP-1334</div></div>
+            <div class="line"><div class="label">Dept:</div><div class="value">General Medicine</div></div>
+            <div class="line"><div class="label">Doctor:</div><div class="value">Dr. Virender Kundu</div></div>
         </div>
     </div>
 
-    <!-- Vitals -->
-    <div class="section">
-        <div class="row">
-            <label>Vitals:</label>
-            <input type="text" value="Pulse 78 | BP 110/70 | SpO2 98%">
-        </div>
+    <!-- VITALS -->
+    <div class="vitals">
+        <b>Vitals:</b> Pulse 78 &nbsp;|&nbsp; BP 110/70 &nbsp;|&nbsp; SpO₂ 98%
     </div>
 
-    <!-- Diagnosis -->
-    <div class="section">
-        <label><b>Diagnosis:</b></label>
-        <textarea rows="3">
+    <!-- DIAGNOSIS -->
+    <div class="section-title">Diagnosis:</div>
+    <div class="diagnosis-box">
 1. Post Craniotomy Status (2010)
 2. GTCS / Epilepsy
-        </textarea>
     </div>
 
-    <!-- Rx -->
+    <!-- RX -->
+    <div class="section-title">Rx</div>
     <div class="rx">
-        <h3>Rx</h3>
-
-        <div class="medicine">
-            <input type="text" value="Tab Levetiracetam 500 mg">
-            <input type="text" value="OD">
+        <div class="rx-row">
+            <div class="rx-med">Tab Levetiracetam 500 mg</div>
+            <div class="rx-dose">OD</div>
         </div>
-
-        <div class="medicine">
-            <input type="text" value="Tab Telvas LN 40">
-            <input type="text" value="OD">
+        <div class="rx-row">
+            <div class="rx-med">Tab Telvas LN 40</div>
+            <div class="rx-dose">OD</div>
         </div>
-
-        <div class="medicine">
-            <input type="text" value="Tab Stalopam 10 mg">
-            <input type="text" value="HS">
+        <div class="rx-row">
+            <div class="rx-med">Tab Stalopam 10 mg</div>
+            <div class="rx-dose">HS</div>
         </div>
-
-        <div class="medicine">
-            <input type="text" value="Cap Pantin D">
-            <input type="text" value="OD">
+        <div class="rx-row">
+            <div class="rx-med">Cap Pantin D</div>
+            <div class="rx-dose">OD</div>
         </div>
-
-        <div class="medicine">
-            <input type="text" value="Tab Neurokind Forte">
-            <input type="text" value="OD">
-        </div>
-
-        <div class="row">
-            <label>Duration:</label>
-            <input type="text" value="20 Days">
+        <div class="rx-row">
+            <div class="rx-med">Tab Neurokind Forte</div>
+            <div class="rx-dose">OD</div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <div class="duration">
+        <div class="label">Duration:</div>
+        <div class="value">20 Days</div>
+    </div>
+
+    <!-- FOOTER -->
     <div class="footer">
-        Not for Medico-Legal Purpose<br>
-        Signature: ______________________
+        <div>Not for Medico-Legal Purpose</div>
+        <div>Signature: _____________________</div>
     </div>
 
 </div>
