@@ -6,223 +6,115 @@
 
 <style>
     body {
-        background: #eaeaea;
-        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background: #ccc;
     }
 
-    .sheet {
-        width: 900px;
+    .page {
+        position: relative;
+        width: 1240px;     /* match image width */
+        height: 1754px;    /* match image height */
         margin: 20px auto;
-        background: #fff;
-        border: 1px solid #999;
-        padding: 18px 22px;
+        background: url("nandini-bg.jpg") no-repeat;
+        background-size: contain;
+        background-color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #000;
     }
 
-    /* HEADER */
-    .header {
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 2px solid #2f7d5a;
-        padding-bottom: 8px;
+    .text {
+        position: absolute;
+        font-size: 18px;
+        white-space: nowrap;
     }
 
-    .hospital-name {
-        font-size: 26px;
-        font-weight: bold;
-        color: #2f7d5a;
-        letter-spacing: 1px;
-    }
+    /* LEFT COLUMN */
+    .uhid { top: 250px; left: 190px; }
+    .name { top: 300px; left: 190px; }
+    .sdwo { top: 350px; left: 190px; }
+    .age  { top: 400px; left: 190px; }
+    .mobile { top: 450px; left: 190px; }
+    .address { top: 500px; left: 190px; }
 
-    .hospital-address {
-        font-size: 14px;
-        margin-top: 2px;
-    }
-
-    .contact {
-        text-align: right;
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    /* DETAILS */
-    .details {
-        margin-top: 15px;
-        display: flex;
-        gap: 30px;
-        font-size: 14px;
-    }
-
-    .col {
-        flex: 1;
-    }
-
-    .line {
-        display: flex;
-        margin-bottom: 8px;
-    }
-
-    .label {
-        width: 120px;
-        font-weight: bold;
-    }
-
-    .value {
-        border-bottom: 1px solid #000;
-        flex: 1;
-        padding-left: 6px;
-    }
+    /* RIGHT COLUMN */
+    .date { top: 250px; left: 720px; }
+    .valid { top: 300px; left: 720px; }
+    .opd { top: 350px; left: 720px; }
+    .dept { top: 400px; left: 720px; }
+    .doctor { top: 450px; left: 720px; }
 
     /* VITALS */
-    .vitals {
-        margin-top: 10px;
-        font-size: 14px;
-    }
+    .vitals { top: 560px; left: 150px; }
 
     /* DIAGNOSIS */
-    .section-title {
-        margin-top: 15px;
-        font-weight: bold;
-        font-size: 15px;
-    }
-
-    .diagnosis-box {
-        border: 1px solid #000;
-        padding: 6px 8px;
-        font-size: 14px;
-        min-height: 65px;
-        white-space: pre-line;
-    }
+    .diag1 { top: 670px; left: 150px; }
+    .diag2 { top: 710px; left: 150px; }
 
     /* RX */
-    .rx {
-        margin-top: 10px;
-        font-size: 14px;
-    }
+    .rx1 { top: 860px; left: 200px; }
+    .rx1d { top: 860px; left: 900px; }
 
-    .rx-row {
-        display: flex;
-        margin-bottom: 8px;
-    }
+    .rx2 { top: 910px; left: 200px; }
+    .rx2d { top: 910px; left: 900px; }
 
-    .rx-med {
-        width: 70%;
-        border-bottom: 1px solid #000;
-        padding-left: 6px;
-    }
+    .rx3 { top: 960px; left: 200px; }
+    .rx3d { top: 960px; left: 900px; }
 
-    .rx-dose {
-        width: 30%;
-        border-bottom: 1px solid #000;
-        padding-left: 6px;
-        text-align: left;
-    }
+    .rx4 { top: 1010px; left: 200px; }
+    .rx4d { top: 1010px; left: 900px; }
 
-    .duration {
-        margin-top: 8px;
-        display: flex;
-        font-size: 14px;
-    }
+    .rx5 { top: 1060px; left: 200px; }
+    .rx5d { top: 1060px; left: 900px; }
 
-    /* FOOTER */
-    .footer {
-        margin-top: 30px;
-        display: flex;
-        justify-content: space-between;
-        font-size: 12px;
-    }
+    /* DURATION */
+    .duration { top: 1120px; left: 260px; }
 
-    @media print {
-        body { background: none; }
-        .sheet { border: none; }
-    }
 </style>
 </head>
 <body>
 
-<div class="sheet">
+<div class="page">
 
-    <!-- HEADER -->
-    <div class="header">
-        <div>
-            <div class="hospital-name">NANDINI HOSPITAL</div>
-            <div class="hospital-address">
-                Chotu Ram Colony, Near Jairam Hospital Chowk,<br>
-                Narwana (Jind)
-            </div>
-        </div>
-        <div class="contact">
-            📞 90500-19007<br>
-            ✉️ nandinihospitalnarwana@gmail.com
-        </div>
-    </div>
+    <!-- LEFT -->
+    <div class="text uhid">U-887/2026</div>
+    <div class="text name">Mrs. Depika</div>
+    <div class="text sdwo">Mr. Vinod Kumar</div>
+    <div class="text age">39Y / Female</div>
+    <div class="text mobile">9671565369</div>
+    <div class="text address">Narwana</div>
 
-    <!-- PATIENT DETAILS -->
-    <div class="details">
-        <div class="col">
-            <div class="line"><div class="label">UHID No:</div><div class="value">U-887/2026</div></div>
-            <div class="line"><div class="label">Name:</div><div class="value">Mrs. Depika</div></div>
-            <div class="line"><div class="label">S/D/W/O:</div><div class="value">Mr. Vinod Kumar</div></div>
-            <div class="line"><div class="label">Age / Sex:</div><div class="value">39Y / Female</div></div>
-            <div class="line"><div class="label">Mobile:</div><div class="value">9671565369</div></div>
-            <div class="line"><div class="label">Address:</div><div class="value">Narwana</div></div>
-        </div>
-
-        <div class="col">
-            <div class="line"><div class="label">Date:</div><div class="value">19-Jan-2026 05:41 PM</div></div>
-            <div class="line"><div class="label">Valid Upto:</div><div class="value">23-Jan-2026</div></div>
-            <div class="line"><div class="label">OPD No:</div><div class="value">OP-1334</div></div>
-            <div class="line"><div class="label">Dept:</div><div class="value">General Medicine</div></div>
-            <div class="line"><div class="label">Doctor:</div><div class="value">Dr. Virender Kundu</div></div>
-        </div>
-    </div>
+    <!-- RIGHT -->
+    <div class="text date">19-Jan-2026 05:41 PM</div>
+    <div class="text valid">23-Jan-2026</div>
+    <div class="text opd">OP-1334</div>
+    <div class="text dept">General Medicine</div>
+    <div class="text doctor">Dr. Virender Kundu</div>
 
     <!-- VITALS -->
-    <div class="vitals">
-        <b>Vitals:</b> Pulse 78 &nbsp;|&nbsp; BP 110/70 &nbsp;|&nbsp; SpO₂ 98%
-    </div>
+    <div class="text vitals">Pulse 78 | BP 110/70 | SpO₂ 98%</div>
 
     <!-- DIAGNOSIS -->
-    <div class="section-title">Diagnosis:</div>
-    <div class="diagnosis-box">
-1. Post Craniotomy Status (2010)
-2. GTCS / Epilepsy
-    </div>
+    <div class="text diag1">1. Post Craniotomy Status (2010)</div>
+    <div class="text diag2">2. GTCS / Epilepsy</div>
 
     <!-- RX -->
-    <div class="section-title">Rx</div>
-    <div class="rx">
-        <div class="rx-row">
-            <div class="rx-med">Tab Levetiracetam 500 mg</div>
-            <div class="rx-dose">OD</div>
-        </div>
-        <div class="rx-row">
-            <div class="rx-med">Tab Telvas LN 40</div>
-            <div class="rx-dose">OD</div>
-        </div>
-        <div class="rx-row">
-            <div class="rx-med">Tab Stalopam 10 mg</div>
-            <div class="rx-dose">HS</div>
-        </div>
-        <div class="rx-row">
-            <div class="rx-med">Cap Pantin D</div>
-            <div class="rx-dose">OD</div>
-        </div>
-        <div class="rx-row">
-            <div class="rx-med">Tab Neurokind Forte</div>
-            <div class="rx-dose">OD</div>
-        </div>
-    </div>
+    <div class="text rx1">Tab Levetiracetam 500 mg</div>
+    <div class="text rx1d">OD</div>
 
-    <div class="duration">
-        <div class="label">Duration:</div>
-        <div class="value">20 Days</div>
-    </div>
+    <div class="text rx2">Tab Telvas LN 40</div>
+    <div class="text rx2d">OD</div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-        <div>Not for Medico-Legal Purpose</div>
-        <div>Signature: _____________________</div>
-    </div>
+    <div class="text rx3">Tab Stalopam 10 mg</div>
+    <div class="text rx3d">HS</div>
+
+    <div class="text rx4">Cap Pantin D</div>
+    <div class="text rx4d">OD</div>
+
+    <div class="text rx5">Tab Neurokind Forte</div>
+    <div class="text rx5d">OD</div>
+
+    <!-- DURATION -->
+    <div class="text duration">20 Days</div>
 
 </div>
 
